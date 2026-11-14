@@ -1,42 +1,57 @@
-  AI 스터디 아리아드네 2기
+# AI 스터디 아리아드네 2기 모집 사이트
 
-별자리 다크 테마 모집 홈페이지입니다. HTML, CSS, JavaScript로 구성되어 패키지 설치나 빌드 없이 사용할 수 있습니다.
+별자리 다크 테마 모집 홈페이지입니다. HTML, CSS, JavaScript로만 만들어서 설치나 빌드가 필요 없습니다.
 
-   다른 사람의 GitHub 저장소에 올리기
+- 공개 주소: https://ariadne-study.vercel.app
+- 호스팅: Vercel(무료)이 이 GitHub 저장소와 연결되어 있습니다. 파일을 고쳐서 GitHub에 올리면 1~2분 뒤 사이트가 자동으로 다시 배포됩니다.
 
-1. ZIP을 풀고 대상 저장소의 쓰기 권한이 있는 계정으로 로그인합니다. 권한이 없다면 저장소 소유자에게 ZIP을 전달합니다.
-2. 홈페이지용 저장소에서 **Add file → Upload files**를 선택합니다. 압축을 푼 폴더 안의 파일과 하위 폴더를 함께 올립니다. 기존 프로젝트가 있는 저장소라면 먼저 별도 브랜치에서 같은 이름의 파일을 확인하세요.
-3. 커밋 후 저장소 첫 화면에 index.html, README.md, assets, fonts가 나란히 있는지 확인합니다.
-4. GitHub Pages로 공개하려면 **Settings → Pages → Deploy from a branch**에서 업로드한 브랜치와 **/(root)**를 선택해 저장합니다.
-
-   폴더 구조
+## 파일 구성
 
 ```text
 index.html                  페이지 본문과 모집 정보
-style.css                   레이아웃과 타이포그래피
-night.css                   별자리 테마와 사진 그리드
-script.js                   지원·활동일지 링크와 안내창
-journey.js                  스크롤 실과 별 점등
-README.md
+style.css                   레이아웃과 글꼴
+night.css                   별자리 테마, 후기 카드, 사진 갤러리 스타일
+script.js                   지원 링크와 활동 기록 링크, 안내창
+reviews.js                  1기 후기 데이터와 후기 카드를 그리는 코드
+journey.js                  스크롤에 따라 실이 그려지고 별이 켜지는 효과
+README.md                   이 파일
 assets/
   constellation.svg         사이트 아이콘
-  ariadne-stars-og.png      공유 미리보기
-  field/
-    activity_01.webp
-    activity_02.webp
-    activity_03.webp
-    activity_04.webp        대표 사진
-    activity_05.webp
-    activity_06.webp
+  ariadne-stars-og.png      공유 미리보기 이미지
+  field/activity_01~08.webp 사진 갤러리 (얼굴 블러 처리본)
 fonts/
   PretendardVariable.woff2
   OFL.txt                   글꼴 라이선스
 ```
 
-   미리보기와 운영
+## 자주 하는 수정
 
-압축을 푼 폴더에서 `python -m http.server 8000`을 실행한 뒤 브라우저에서 http://localhost:8000 을 엽니다.
+**후기 추가하기**: `reviews.js`의 `REVIEWS` 목록에 항목을 하나 더합니다. 항목은 `part`(대학생 또는 취준생), `who`(익명 표기), `title`, `quote`(한 줄 인용), `body`(본문)로 이루어져 있습니다. 후기는 참가자에게 게시 동의를 받은 원문만 싣습니다.
 
-- 신청폼과 활동일지 주소는 script.js의 APPLY_FORM_URL과 NOTION_URL에서 지정합니다. 실제 링크 연결 시 index.html의 준비 중 안내 문구도 갱신하세요.
-- 사진 캡션은 index.html의 field-notes 섹션에서 각 사진의 figcaption을 수정합니다.
-- 공유 이미지는 동봉된 assets/ariadne-stars-og.png를 사용합니다. 배포 주소 확정 후 index.html의 og:image 값을 해당 이미지의 전체 HTTPS 주소로 지정하면 됩니다.
+**지원 링크 연결하기**: `script.js` 맨 위의 `APPLY_FORM_URL`에 지원폼 주소를 넣습니다. 주소를 넣기 전까지는 "지원하기"를 눌러도 안내창만 뜹니다. 연결한 뒤 `index.html`의 "신청 폼 준비 중" 안내 문구도 지우세요.
+
+**활동 기록 링크 연결하기**: `script.js`의 `NOTION_URL`에 노션 활동 기록 주소를 넣습니다. 연결한 뒤 `index.html`의 "활동 기록 링크 준비 중" 문구도 지우세요.
+
+**사진 캡션 고치기**: `index.html`의 `field-notes` 섹션에서 각 사진의 `figcaption`을 고칩니다.
+
+**마감일과 일정 고치기**: `index.html`의 "모집 마감"과 `script.js`의 안내창 문구에 마감일이 들어 있습니다. 두 곳을 같이 고치세요.
+
+**공유 미리보기**: `index.html`의 `og:image`, `og:url`, `twitter:image`는 전체 주소(`https://ariadne-study.vercel.app/...`)로 지정되어 있습니다. 주소를 바꾸면 이 세 줄도 같이 바꿉니다.
+
+## GitHub에 올리는 방법
+
+1. 저장소 화면에서 **Add file → Upload files**를 누릅니다.
+2. 컴퓨터의 사이트 폴더 **안으로 들어가서** 고친 파일(또는 `assets` 폴더)을 끌어다 놓습니다. 폴더째 올리면 파일이 `폴더이름/` 안으로 들어가므로 주의하세요.
+3. 올라간 목록이 `/index.html`처럼 저장소 맨 위 경로로 시작하는지 확인하고 **Commit changes**를 누릅니다.
+4. 1~2분 뒤 공개 주소를 새로고침해서 반영됐는지 확인합니다.
+
+바로 고치는 작은 수정은 GitHub에서 파일을 열고 연필 아이콘(Edit)으로 직접 고쳐도 됩니다.
+
+## 주의
+
+- 참가자 얼굴이 가려지지 않은 원본 사진, 후기 원본, 개인정보가 담긴 파일은 이 저장소에 올리지 마세요. 저장소는 공개 상태입니다.
+- 사이트 사진은 얼굴을 블러 처리한 것만 올립니다.
+
+## 내 컴퓨터에서 미리보기
+
+사이트 폴더에서 `python -m http.server 8000`을 실행하고 브라우저에서 http://localhost:8000 을 엽니다.
