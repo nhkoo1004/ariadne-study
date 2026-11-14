@@ -8,7 +8,8 @@ html{color-scheme:dark}body{background-color:var(--paper);background-image:radia
 .field-notes .body-copy { margin: 16px 0 32px; }
 .field-gallery { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px 18px; }
 .field-gallery figure { margin: 0; }
-.field-gallery figure:first-child { grid-column: 1 / -1; }
+.field-gallery figure:first-child, .field-gallery figure.wide { grid-column: 1 / -1; }
+.field-gallery figure.wide img { aspect-ratio: 1200 / 554; }
 .field-gallery img {
   display: block;
   width: 100%;
