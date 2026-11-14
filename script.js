@@ -1,5 +1,5 @@
 // 폼 링크 추후 연결: Smore 신청 폼 URL로 교체하세요.
-const APPLY_FORM_URL = '#apply-form';
+const APPLY_FORM_URL = 'https://smore.im/form/TpQe4mgxaH';
 // 노션 활동 기록 URL로 교체하세요.
 const NOTION_URL = '#notion-link';
 const notice = document.getElementById('notice');
