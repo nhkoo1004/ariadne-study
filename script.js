@@ -21,7 +21,7 @@ function connectLinks(selector, url, title, copy) {
     }
   });
 }
-connectLinks('[data-apply]', APPLY_FORM_URL, '신청 폼을 준비 중이에요.', 'Smore 신청 폼은 추후 연결될 예정이에요. 모집 마감은 12월 25일(금), 시작일은 협의 예정이에요.');
+connectLinks('[data-apply]', APPLY_FORM_URL, '신청 폼을 준비 중이에요.', 'Smore 신청 폼은 추후 연결될 예정이에요. 모집 마감은 11월 30일(월), 시작일은 협의 예정이에요.');
 connectLinks('[data-notion]', NOTION_URL, '활동 기록 링크 준비 중', '노션 활동 기록 링크는 추후 연결될 예정이에요.');
 document.getElementById('close-notice').onclick = () => notice.close();
 document.getElementById('notice-ok').onclick = () => notice.close();
