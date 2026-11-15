@@ -59,3 +59,6 @@ html{color-scheme:dark}body{background-color:var(--paper);background-image:radia
 .record-lines span:first-child { margin-bottom: 14px; }
 
 .closing-info a { color: var(--accent); text-decoration: underline; text-underline-offset: 3px; }
+
+/* 사진 날짜 설명: 따뜻한 상자 */
+.field-gallery figcaption { display: block; margin-top: 10px; padding: 9px 13px; background: #3a2b26; border: 1px solid #d98e6d; border-radius: 6px; color: #f7dcc0; font-size: 14px; font-weight: 700; line-height: 1.5; }
