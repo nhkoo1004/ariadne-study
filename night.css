@@ -53,3 +53,7 @@ html{color-scheme:dark}body{background-color:var(--paper);background-image:radia
   .thread-art { margin-top: -20px; }
   .thread-art img { aspect-ratio: 4 / 3; object-position: 78% center; }
 }
+/* 활동일지 카드: 줄 대신 예시 문구 */
+.record-lines .rl-row { margin: 0; padding: 13px 0; border-bottom: 1px solid var(--line); font-size: 14px; line-height: 1.5; color: var(--ink); display: grid; grid-template-columns: 3.6em minmax(0, 1fr); column-gap: 8px; }
+.record-lines .rl-row b { color: var(--accent); font-weight: 700; }
+.record-lines span:first-child { margin-bottom: 14px; }
